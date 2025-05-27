@@ -1,10 +1,5 @@
-// Main JavaScript functionality
-// main.js
-
-// Initialize when DOM is fully loaded
 document.addEventListener("DOMContentLoaded", function () {
-  // === Hamburger Menu Toggle ===
-  // Toggles the navigation menu and hamburger icon on click
+  // Hamburger Menu Toggle
   const hamburger = document.querySelector(".hamburger");
   const nav = document.querySelector(".navigation");
 
@@ -13,7 +8,6 @@ document.addEventListener("DOMContentLoaded", function () {
     hamburger.classList.toggle("active");
   });
 
-  // Close mobile menu on window resize above 768px
   window.addEventListener("resize", () => {
     if (window.innerWidth > 768) {
       nav.classList.remove("active");
@@ -21,49 +15,95 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  // === Orbit Items Hover Effects ===
-  // Changes orbit center content on hover over orbit items
-  const orbitItems = document.querySelectorAll(".orbit-item");
-  const orbitCenter = document.querySelector(".orbit-center");
+  // Navigation Active State Management
+  const navItems = document.querySelectorAll(".nav-item");
+  const currentPage = window.location.pathname.split("/").pop() || "main.html";
 
-  // Store original orbit center content
-  const originalCategory = document.querySelector(
-    ".orbit-center-category"
-  ).textContent;
-  const originalTitle = document.querySelector(".orbit-center h2").textContent;
-  const originalDescription =
-    document.querySelector(".orbit-center p").textContent;
+  navItems.forEach((item) => {
+    item.classList.remove("active");
+    if (item.getAttribute("href") === currentPage) {
+      item.classList.add("active");
+    }
+  });
 
-  orbitItems.forEach((item) => {
-    item.addEventListener("mouseenter", function () {
-      document.querySelector(".orbit-center-category").textContent = "SERVICE";
-      document.querySelector(".orbit-center h2").textContent =
-        this.getAttribute("data-service");
-      document.querySelector(".orbit-center p").textContent =
-        this.getAttribute("data-description");
-      orbitCenter.style.background =
-        "linear-gradient(135deg, #ff6b00 0%, #ffa200 100%)";
-    });
-
-    item.addEventListener("mouseleave", function () {
-      document.querySelector(".orbit-center-category").textContent =
-        originalCategory;
-      document.querySelector(".orbit-center h2").textContent = originalTitle;
-      document.querySelector(".orbit-center p").textContent =
-        originalDescription;
-      orbitCenter.style.background =
-        "linear-gradient(135deg, #4169ff 0%, #5e9eff 100%)";
+  navItems.forEach((item) => {
+    item.addEventListener("click", function () {
+      navItems.forEach((nav) => nav.classList.remove("active"));
+      this.classList.add("active");
     });
   });
 
-  // === Typing Animation for Heading ===
-  // Initializes Typed.js for cycling through heading phrases
+  // Orbit Items Hover Effects with Animation Control
+  const orbitItems = document.querySelectorAll(".orbit-item");
+  const orbitCenter = document.querySelector(".orbit-center");
+  const orbitContainer = document.querySelector(".orbit-container");
+
+  // Store original content
+  const originalCategory = document.querySelector(
+    ".orbit-center-category"
+  )?.textContent;
+  const originalTitle = document.querySelector(".orbit-center h2")?.textContent;
+  const originalDescription =
+    document.querySelector(".orbit-center p")?.textContent;
+
+  // Function to stop all orbit animations
+  function stopOrbitAnimations() {
+    if (orbitContainer) {
+      orbitContainer.style.animationPlayState = "paused";
+    }
+    orbitItems.forEach((item) => {
+      item.style.animationPlayState = "paused";
+    });
+  }
+
+  // Function to resume all orbit animations
+  function resumeOrbitAnimations() {
+    if (orbitContainer) {
+      orbitContainer.style.animationPlayState = "running";
+    }
+    orbitItems.forEach((item) => {
+      item.style.animationPlayState = "running";
+    });
+  }
+
+  orbitItems.forEach((item) => {
+    item.addEventListener("mouseenter", function () {
+      stopOrbitAnimations();
+
+      if (originalCategory && originalTitle && originalDescription) {
+        document.querySelector(".orbit-center-category").textContent =
+          "SERVICE";
+        document.querySelector(".orbit-center h2").textContent =
+          this.getAttribute("data-service");
+        document.querySelector(".orbit-center p").textContent =
+          this.getAttribute("data-description");
+        orbitCenter.style.background =
+          "linear-gradient(135deg, #ff6b00 0%, #ffa200 100%)";
+      }
+    });
+
+    item.addEventListener("mouseleave", function () {
+      resumeOrbitAnimations();
+
+      if (originalCategory && originalTitle && originalDescription) {
+        document.querySelector(".orbit-center-category").textContent =
+          originalCategory;
+        document.querySelector(".orbit-center h2").textContent = originalTitle;
+        document.querySelector(".orbit-center p").textContent =
+          originalDescription;
+        orbitCenter.style.background =
+          "linear-gradient(135deg, #4169ff 0%, #5e9eff 100%)";
+      }
+    });
+  });
+
+  // Typing Animation
   if (typeof Typed !== "undefined") {
     const typed = new Typed(".typing", {
       strings: [
-        "Driving Graphic Design Excellence...",
-        "Crafting Stunning Visuals...",
-        "Empowering Your Brand...",
+        "Built by Oyebimpe...",
+        "Emmanuel is Awesome...",
+        "No One But Emmanuel...",
       ],
       typeSpeed: 50,
       backSpeed: 30,
@@ -72,10 +112,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // === Scroll-Triggered Animations with GSAP ===
-  // Animates sections and cards on scroll
+  // GSAP Scroll Animations
   if (typeof gsap !== "undefined" && typeof ScrollTrigger !== "undefined") {
-    // Services Section: Alternate left-right animations for cards
     gsap.utils.toArray(".service-card").forEach((card, index) => {
       gsap.from(card, {
         scrollTrigger: {
@@ -91,8 +129,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Projects Section: Staggered fade-in for project cards
-    gsap.utils.toArray(".project-card").forEach((card, index) => {
+    gsap.utils.toArray(".projects-card").forEach((card, index) => {
       gsap.from(card, {
         scrollTrigger: {
           trigger: card,
@@ -107,7 +144,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Containerd: Text and image slide in from opposite sides
     gsap.from(".text-content", {
       scrollTrigger: {
         trigger: ".containerd",
@@ -133,7 +169,6 @@ document.addEventListener("DOMContentLoaded", function () {
       delay: 0.2,
     });
 
-    // Why Us Section: Hero section and feature cards
     gsap.from(".hero-section", {
       scrollTrigger: {
         trigger: ".whyus",
@@ -161,7 +196,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
-    // Orbit Container: Fade-in and scale
     gsap.from(".orbit-container", {
       scrollTrigger: {
         trigger: ".orbit-container",
@@ -175,32 +209,29 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // === Project Filtering ===
-  // Handles project filtering with loading animation
-  const filterButtons = document.querySelectorAll(".filter-button");
-  const projectCards = document.querySelectorAll(".project-card");
-  const loadingContainer = document.querySelector(".loading-container");
+  // Project Filtering
+  const filterButtons = document.querySelectorAll(".projects-filter-button");
+  const projectCards = document.querySelectorAll(".projects-card");
+  const loadingContainer = document.querySelector(
+    ".projects-loading-container"
+  );
 
   filterButtons.forEach((button) => {
     button.addEventListener("click", function () {
       const filterValue = this.getAttribute("data-filter");
 
-      // Update active button
       filterButtons.forEach((btn) => btn.classList.remove("active"));
       this.classList.add("active");
 
-      // Show loading animation
-      loadingContainer.style.display = "flex";
+      if (loadingContainer) loadingContainer.style.display = "flex";
 
-      // Hide all projects
       projectCards.forEach((card) => {
         card.style.opacity = "0";
         card.style.transform = "translateY(20px)";
       });
 
-      // Filter projects after delay
       setTimeout(() => {
-        loadingContainer.style.display = "none";
+        if (loadingContainer) loadingContainer.style.display = "none";
         projectCards.forEach((card) => {
           const cardCategory = card.getAttribute("data-category");
           if (filterValue === "all" || filterValue === cardCategory) {
@@ -217,8 +248,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  // === 3D Tilt Effect for Project Cards ===
-  // Adds interactive tilt effect on mouse move
+  // 3D Tilt Effect for Project Cards
   projectCards.forEach((card) => {
     card.addEventListener("mousemove", function (e) {
       const rect = card.getBoundingClientRect();
