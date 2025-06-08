@@ -1,5 +1,6 @@
 /* Welcome page styles */
-@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -7,13 +8,13 @@
 }
 
 body {
-  font-family: "Michroma", sans-serif;
+  font-family: 'Orbitron', sans-serif;
   height: 100vh;
 }
 
 .container {
-  background-color: black;
-  color: #fff;
+  background: linear-gradient(to right, #ffffff, #ffecd2);
+  color: black;
   height: 100vh;
   width: 100%;
   display: flex;
@@ -27,8 +28,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
-  background: linear-gradient(to right, #2c5364, #203a43, #0f2027);
-
+  background: linear-gradient(to right, #ffffff, #ffecd2);
   height: 100%;
   width: 100%;
   display: flex;
@@ -39,10 +39,11 @@ body {
   color: #191654;
 }
 
+
 #svg {
-  height: 150px;
-  width: 150px;
-  stroke: white;
+  height: 200px;
+  width: 200px;
+  stroke: #000;
   fill-opacity: 0;
   stroke-width: 3px;
   stroke-dasharray: 4500;
@@ -58,39 +59,45 @@ body {
   }
 }
 
+/* Container for name below the A */
 .name-container {
-  height: 30px;
-  overflow: hidden;
+  height: auto;
+  overflow: visible;
 }
 
+/* Logo text - AMAZE VISUALS */
 .logo-name {
-  color: #fff;
-  font-size: 20px;
-  letter-spacing: 12px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 28px;
+  letter-spacing: 10px;
+  color: #000;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 10px;
   text-transform: uppercase;
-  margin-left: 20px;
-  font-weight: bolder;
 }
 
+/* Button Styling */
 .btnn {
   background-color: white;
-  text-decoration: none;
   color: black;
   padding: 12px 24px;
-  border: none;
+  border: 2px solid black;
   border-radius: 8px;
-  text-decoration: none;
   font-size: 16px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
   margin-top: 20px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 .btnn:hover {
   background-color: orange;
+  color: black;
+  border-color: black;
 }
 
 a {
   text-decoration: none;
-  color: inherit; /* Inherits the color from the parent element */
+  color: inherit;
 }

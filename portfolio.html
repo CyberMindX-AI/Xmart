@@ -2,7 +2,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Xmart Portfolio</title>
+    <title>Amaze visuals Portfolio</title>
     <link rel="stylesheet" href="css/main.css" />
     <link
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
@@ -13,9 +13,9 @@
     <header class="header">
       <div class="logo-container">
         <div class="logo-box">
-          <span class="logo-icon">X</span>
+          <span class="logo-icon">A</span>
         </div>
-        <span class="brand-name" style="color: #ff6600">XMART</span>
+        <span class="brand-name" style="color: #ff6600">Amaze Visuals</span>
       </div>
       <nav class="navigation">
         <a href="main.html" class="nav-item active">Home</a>
@@ -49,7 +49,7 @@
       <div class="category-tabs">
         <div class="category-tab selected" data-filter="all">All Projects</div>
         <div class="category-tab" data-filter="branding">Branding</div>
-        <div class="category-tab" data-filter="web">Web Design</div>
+        <div class="category-tab" data-filter="web">Poster Design</div>
         <div class="category-tab" data-filter="video">Video</div>
         <div class="category-tab" data-filter="print">Print Design</div>
       </div>
@@ -62,7 +62,7 @@
     <div class="notification" id="notification"></div>
     <button
       class="whatsapp-button"
-      onclick="window.open('https://wa.me/08034369496', '_blank')"
+      onclick="window.open('https://wa.me/+2349023413227', '_blank')"
     >
       <i class="fab fa-whatsapp"></i>
     </button>
@@ -72,12 +72,12 @@
       <div class="contact-info">
         <div class="contact-item">
           <span class="contact-label">Phone:</span>
-          <a href="tel:+2348034369496" class="contact-value">+2348034369496</a>
+          <a href="tel:+2349023413227" class="contact-value">+2349023413227</a>
         </div>
         <div class="contact-item">
           <span class="contact-label">Email:</span>
           <a href="mailto:contact@Xmart" class="contact-value"
-            >contact@xmart.com</a
+            >Xmart@myyahoo.com</a
           >
         </div>
       </div>
@@ -98,7 +98,7 @@
           </svg>
         </a>
         <a
-          href="https://instagram.com/wealthconsort"
+          href="https://www.instagram.com/amazevisuals1/"
           class="social-icon"
           aria-label="Instagram"
         >
@@ -118,7 +118,7 @@
       </div>
 
       <div class="copyright">
-        Copyright © <span class="company-name">Xmart</span> 2025 xmart All
+        Copyright © <span class="company-name">Amaze</span> 2025 Amaze All
         Rights Reserved
       </div>
     </footer>
@@ -126,190 +126,124 @@
       // Portfolio data
       const portfolioData = [
         // Images
-        {
-          type: "image",
-          src: "https://picsum.photos/400/600?random=1",
-          title: "Brand Identity Design",
-          category: "branding",
-          description: "Complete brand package for tech startup",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/800?random=2",
-          title: "Website Mockup",
-          category: "web",
-          description: "Modern e-commerce platform design",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/500?random=3",
-          title: "Logo Collection",
-          category: "branding",
-          description: "Various logo designs for clients",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/700?random=4",
-          title: "Print Campaign",
-          category: "print",
-          description: "Magazine advertisement series",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/600?random=5",
-          title: "Mobile App UI",
-          category: "web",
-          description: "Social media app interface",
-        },
 
-        // Videos
-        {
-          type: "video",
-          src: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
-          title: "Brand Animation",
-          category: "video",
-          description: "Animated logo reveal",
-        },
-        {
-          type: "video",
-          src: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
-          title: "Product Showcase",
-          category: "video",
-          description: "3D product animation",
-        },
 
-        // More images
-        {
-          type: "image",
-          src: "https://picsum.photos/400/900?random=6",
-          title: "Packaging Design",
-          category: "print",
-          description: "Premium product packaging",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/550?random=7",
-          title: "Web Dashboard",
-          category: "web",
-          description: "Analytics dashboard design",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/750?random=8",
-          title: "Corporate Identity",
-          category: "branding",
-          description: "Business card and stationery",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/650?random=9",
-          title: "Social Media Kit",
-          category: "branding",
-          description: "Instagram templates collection",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/800?random=10",
-          title: "Poster Design",
-          category: "print",
-          description: "Event promotional materials",
-        },
+  // Images – Branding (Flyers, Logos, Identity)
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-psd/marketing-flyer-template_23-2148814983.jpg",
+    title: "Marketing Flyer",
+    category: "branding",
+    description: "Professional marketing flyer design template.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-vector/flat-design-business-logo-template_23-2148814984.jpg",
+    title: "Business Logo",
+    category: "branding",
+    description: "Flat design business logo template.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-psd/corporate-identity-template_23-2148814985.jpg",
+    title: "Corporate Identity",
+    category: "branding",
+    description: "Complete corporate identity branding set.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-vector/modern-logo-design_23-2148814986.jpg",
+    title: "Modern Logo",
+    category: "branding",
+    description: "Sleek and modern logo design concept.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-psd/business-flyer-template_23-2148814987.jpg",
+    title: "Business Flyer",
+    category: "branding",
+    description: "Creative business flyer design template.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-vector/branding-identity-template_23-2148814988.jpg",
+    title: "Branding Identity",
+    category: "branding",
+    description: "Comprehensive branding identity template.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-psd/logo-mockup-template_23-2148814989.jpg",
+    title: "Logo Mockup",
+    category: "branding",
+    description: "Realistic logo mockup on textured paper.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-vector/creative-logo-design_23-2148814990.jpg",
+    title: "Creative Logo",
+    category: "branding",
+    description: "Innovative and creative logo design.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-psd/flyer-design-template_23-2148814991.jpg",
+    title: "Flyer Design",
+    category: "branding",
+    description: "Modern flyer design for events and promotions.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-vector/brand-identity-template_23-2148814992.jpg",
+    title: "Brand Identity",
+    category: "branding",
+    description: "Complete brand identity design set.",
+  },
+  {
+    type: "image",
+    src: "https://img.freepik.com/free-psd/logo-template-design_23-2148814993.jpg",
+    title: "Logo Template",
+    category: "branding",
+    description: "Editable logo template for various industries.",
+  },
+ {
+    type: "video",
+    src: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_1mb.mp4",
+    title: "Brand Animation",
+    category: "video",
+    description: "Animated logo reveal",
+  },
+  {
+    type: "video",
+    src: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_2mb.mp4",
+    title: "Product Showcase",
+    category: "video",
+    description: "3D product animation",
+  },
+  {
+    type: "video",
+    src: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4",
+    title: "Motion Graphics",
+    category: "video",
+    description: "Animated infographic",
+  },
+  {
+    type: "video",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    title: "Commercial Video",
+    category: "video",
+    description: "Brand commercial production",
+  },
+  {
+    type: "video",
+    src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    title: "Creative Reel",
+    category: "video",
+    description: "Portfolio showcase video",
+  },
+];
 
-        // More videos
-        {
-          type: "video",
-          src: "https://sample-videos.com/zip/10/mp4/SampleVideo_1280x720_5mb.mp4",
-          title: "Motion Graphics",
-          category: "video",
-          description: "Animated infographic",
-        },
-        {
-          type: "video",
-          src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
-          title: "Commercial Video",
-          category: "video",
-          description: "Brand commercial production",
-        },
-        {
-          type: "video",
-          src: "https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
-          title: "Creative Reel",
-          category: "video",
-          description: "Portfolio showcase video",
-        },
-
-        // More images
-        {
-          type: "image",
-          src: "https://picsum.photos/400/600?random=11",
-          title: "Landing Page",
-          category: "web",
-          description: "Conversion-focused design",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/700?random=12",
-          title: "Brand Guidelines",
-          category: "branding",
-          description: "Complete brand manual",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/550?random=13",
-          title: "Brochure Design",
-          category: "print",
-          description: "Corporate tri-fold brochure",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/850?random=14",
-          title: "E-commerce Store",
-          category: "web",
-          description: "Online shopping experience",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/600?random=15",
-          title: "Icon Set",
-          category: "branding",
-          description: "Custom icon collection",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/750?random=16",
-          title: "Annual Report",
-          category: "print",
-          description: "Corporate annual report design",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/650?random=17",
-          title: "App Interface",
-          category: "web",
-          description: "Fitness tracking app UI",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/800?random=18",
-          title: "Business Cards",
-          category: "print",
-          description: "Luxury business card design",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/550?random=19",
-          title: "Website Redesign",
-          category: "web",
-          description: "Corporate website overhaul",
-        },
-        {
-          type: "image",
-          src: "https://picsum.photos/400/700?random=20",
-          title: "Logo Animation",
-          category: "branding",
-          description: "Animated brand identity",
-        },
-      ];
+      
 
       let currentFilter = "all";
 
@@ -346,7 +280,7 @@
 
       function shareItem(title) {
         const url = window.location.href;
-        const shareText = `Check out this amazing ${title} by Xmart Design Studio!`;
+        const shareText = `Check out this amazing ${title} by Amaze visuals!`;
 
         if (navigator.share) {
           navigator.share({
@@ -468,7 +402,7 @@
       // Initialize portfolio
       document.addEventListener("DOMContentLoaded", () => {
         loadPortfolio();
-        showNotification("Welcome to Xmart Design Studio! 🎨", 4000);
+        showNotification("Welcome to Amaze visuals Studio! 🎨", 4000);
       });
 
       // Add scroll animations

@@ -101,9 +101,9 @@ document.addEventListener("DOMContentLoaded", function () {
   if (typeof Typed !== "undefined") {
     const typed = new Typed(".typing", {
       strings: [
-        "Built by Oyebimpe...",
-        "Emmanuel is Awesome...",
-        "No One But Emmanuel...",
+        "Driving Graphic Design Excellence...",
+        "Crafting Stunning Visuals...",
+        "Empowering Your Brand...",
       ],
       typeSpeed: 50,
       backSpeed: 30,
